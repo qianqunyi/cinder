@@ -89,7 +89,17 @@
             voting: false
             irrelevant-files: *gate-irrelevant-files
         - devstack-plugin-nfs-tempest-full:
-            irrelevant-files: *gate-irrelevant-files
+            files:
+            - ^cinder/backup/drivers/nfs.py
+            - ^cinder/backup/drivers/posix.py
+            - ^cinder/image/image_utils.py
+            - ^cinder/privsep/.*$
+            - ^cinder/volume/driver.py
+            - ^cinder/volume/driver_utils.py
+            - ^cinder/volume/manager.py
+            - ^cinder/volume/volume_utils.py
+            - ^cinder/volume/drivers/nfs.py
+            - ^cinder/volume/drivers/remotefs.py
         - tempest-slow-py3:
             irrelevant-files: *gate-irrelevant-files
         - tempest-integrated-storage:
